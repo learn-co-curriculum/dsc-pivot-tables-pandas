@@ -18,11 +18,11 @@ In this section, we will learn:
 ### Long and Wide Formats
 
 
-These two different formats refer to how we structure our data in a DataFrame.  We'll start by comparing the two, and discussing the salient points of each. 
+These two different formats refer to how we structure our data in a DataFrame.  We'll start by comparing the two, and discussing the salient points of each.
 
 #### Wide Format
 
-This is the common setup you're probably used to seeing. In the wide format, each column of data represents a variable, and each row represents 1 observation.  If this were a medical dataset, each row would be the data corresponding to a different patient. 
+This is the common setup you're probably used to seeing. In the wide format, each column of data represents a variable, and each row represents 1 observation.  If this were a medical dataset, each row would be the data corresponding to a different patient.
 
 In wide format, the index usually an integer, with 0 being the topmost row.  
 
@@ -33,7 +33,7 @@ In Long format, each index is a point in time for each observation.  See the fol
 
 <br>
 <br>
-<img src="wide_vs_long.png">
+<img src="wide_vs_long.PNG">
 
 Note that in this format, a given observation has values across multiple rows.  This is an especially useful format when dealing with time series data, or aggegrated data, because we can make use of **_Multi-Hierarchical Indexing_**,
 
@@ -43,21 +43,21 @@ A common task when working with data is to create pivot tables, or group the dat
 <br>
 <br>
 
-<img src="pt1.png">
+<img src="pt1.PNG">
 
 We can see by looking at the left two columns that this DataFrame has a Multi-Hierarchical Index with 2 levels, consisting of the "State" and Gender.  In this way, we have an easy way to aggregate and organize information to allow us to quickly answer questions with our data like "What was the total number of deaths by gender in Alabama?".
 
 Let's take a look at one more example:
 
 
-<img src="pt2.png">
+<img src="pt2.PNG">
 
 In this DataFrame, the index has three hierarchical levels, with the outermost being "State" and the innermost being "Race".
 
 
 ## `.groupby()` and Aggregation Functions
 
-Pandas DataFrames provide an easy way to group data using the `.groupby()` function.  To use this function, we just specify our indices in order (the columns we want to group the data by) and the function will return a new DataFrame containing the data grouped as we asked. 
+Pandas DataFrames provide an easy way to group data using the `.groupby()` function.  To use this function, we just specify our indices in order (the columns we want to group the data by) and the function will return a new DataFrame containing the data grouped as we asked.
 
 For instance, if we wanted to group the Titanic Dataset by the port of embarkation, we would type:
 
@@ -89,7 +89,7 @@ Notice that we can make use of method chaining to quickly and concisely call the
 
 Pivot tables are a common toolset that you might have used before in spreadsheet software such as Microsoft Excel or Google Sheets.  
 
-<img src="excel_pt.png">
+<img src="excel_pt.PNG">
 <br>
 <center>_An Example Pivot Table created in Microsoft Excel_</center>
 
@@ -105,7 +105,7 @@ some_dataframe.pivot(index='State', columns='Gender', values='Deaths_mean')
 
 would return this pivot table:
 
-<img src="pt3.png">
+<img src="pt3.PNG">
 
 Don't worry about the data this actually contains, as you don't yet have the context because you haven't been introduced to the dataset. Instead, just pay attention to the structure of the indexes.
 
@@ -116,6 +116,6 @@ One of the quickest ways to manipulate the format of a dataset in python is to u
 
 Take a look at the following diagram and see if you can figure out what the `unstack()` is doing.
 
-<img src='unstack.png'>
+<img src='unstack.PNG'>
 
 By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column--`.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
