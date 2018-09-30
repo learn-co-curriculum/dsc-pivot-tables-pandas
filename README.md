@@ -116,6 +116,6 @@ One of the quickest ways to manipulate the format of a dataset in python is to u
 
 Take a look at the following diagram and see if you can figure out what the `unstack()` is doing.
 
-<img src='unstack.PNG'>
+<img src='unstack.png'>
 
 By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column--`.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
