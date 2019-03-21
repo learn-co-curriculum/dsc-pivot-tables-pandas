@@ -33,7 +33,7 @@ In Long format, each index is a point in time for each observation.  See the fol
 
 <br>
 <br>
-<img src="wide_vs_long.png">
+<img src="images/wide_vs_long.png">
 
 Note that in this format, a given observation has values across multiple rows.  This is an especially useful format when dealing with time series data, or aggegrated data, because we can make use of **_Multi-Hierarchical Indexing_**,
 
@@ -43,14 +43,14 @@ A common task when working with data is to create pivot tables, or group the dat
 <br>
 <br>
 
-<img src="pt1.png">
+<img src="images/pt1.png">
 
 We can see by looking at the left two columns that this DataFrame has a Multi-Hierarchical Index with 2 levels, consisting of the "State" and Gender.  In this way, we have an easy way to aggregate and organize information to allow us to quickly answer questions with our data like "What was the total number of deaths by gender in Alabama?".
 
 Let's take a look at one more example:
 
 
-<img src="pt2.png">
+<img src="images/pt2.png">
 
 In this DataFrame, the index has three hierarchical levels, with the outermost being "State" and the innermost being "Race".
 
@@ -89,7 +89,7 @@ Notice that we can make use of method chaining to quickly and concisely call the
 
 Pivot tables are a common toolset that you might have used before in spreadsheet software such as Microsoft Excel or Google Sheets.  
 
-<img src="excel_pt.png">
+<img src="images/excel_pt.png">
 <br>
 <center>_An Example Pivot Table created in Microsoft Excel_</center>
 
@@ -105,7 +105,7 @@ some_dataframe.pivot(index='State', columns='Gender', values='Deaths_mean')
 
 would return this pivot table:
 
-<img src="pt3.png">
+<img src="images/pt3.png">
 
 Don't worry about the data this actually contains, as you don't yet have the context because you haven't been introduced to the dataset. Instead, just pay attention to the structure of the indexes.
 
@@ -116,11 +116,10 @@ One of the quickest ways to manipulate the format of a dataset in python is to u
 
 Take a look at the following diagram and see if you can figure out what the `unstack()` is doing.
 
-<img src='unstack.png'>
+<img src='images/unstack.png'>
 
 By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column--`.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
 
 ## Summary
 
 We spent some time in this lesson learning about approaches to indexing and structuring our data sets. In the next lesson, we'll get some hands on practice!
-
