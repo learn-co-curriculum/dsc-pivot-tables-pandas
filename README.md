@@ -35,11 +35,11 @@ In Long format, each index is a point in time for each observation.  See the fol
 <br>
 <img src="images/wide_vs_long.png">
 
-Note that in this format, a given observation has values across multiple rows.  This is an especially useful format when dealing with time series data, or aggegrated data, because we can make use of **_Multi-Hierarchical Indexing_**,
+Note that in this format, a given observation has values across multiple rows.  This is an especially useful format when dealing with time series data, or aggregated data, because we can make use of **_Multi-Hierarchical Indexing_**,
 
 ## Multi-Hierarchical Indexing
 
-A common task when working with data is to create pivot tables, or group the data using aggregation functions.  In this respect, the Long format is provides a very neat, organized way of structuring our data with multiple levels of indexes, allowing us to cleanly and easily represent different combinations of data.  Consider the following pivot table below (which you'll create yourself in the next lab):
+A common task when working with data is to create pivot tables, or group the data using aggregation functions.  In this respect, the Long format provides a very neat, organized way of structuring our data with multiple levels of indexes, allowing us to cleanly and easily represent different combinations of data.  Consider the following pivot table below (which you'll create yourself in the next lab):
 <br>
 <br>
 
@@ -73,7 +73,7 @@ Perhaps we want to group our data by both the port of embarkation and the ticket
 dataframe.groupby(['Embarked', 'Pclass'])
 ```
 
-This would return a DataFrame with a multihierarchical index, with `'Embarked'` being the outermost level.
+This would return a DataFrame with a multi-hierarchical index, with `'Embarked'` being the outermost level.
 
 Groupby statements are most commonly used with aggregation functions, which allow us to quickly calculate summary statistics such as the mean, median, min, max, mode, count, etc.  
 
@@ -122,4 +122,4 @@ By telling the `.unstack()` call which index we want to unstack, we can move it 
 
 ## Summary
 
-We spent some time in this lesson learning about approaches to indexing and structuring our data sets. In the next lesson, we'll get some hands on practice!
+We spent some time in this lesson learning about approaches to indexing and structuring our data sets. In the next lesson, we'll get some hands-on practice!
