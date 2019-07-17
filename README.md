@@ -33,7 +33,7 @@ In Long format, each index is a point in time for each observation.  See the fol
 
 <br>
 <br>
-<img src="images/wide_vs_long.png">
+<img src="images/Image_200_wide_v_long.png">
 
 Note that in this format, a given observation has values across multiple rows.  This is an especially useful format when dealing with time series data, or aggregated data, because we can make use of **_Multi-Hierarchical Indexing_**,
 
@@ -116,7 +116,7 @@ One of the quickest ways to manipulate the format of a dataset in python is to u
 
 Take a look at the following diagram and see if you can figure out what the `unstack()` is doing.
 
-<img src='images/unstack.png'>
+<img src='images/Image_201_unstack.png'>
 
 By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column--`.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
 
