@@ -3,16 +3,17 @@
 
 ## Introduction
 
-In this section, we'll learn about the various ways we can index and structure our data sets to make it easier to process or understand.  We start by learning about the difference between the **_Wide_** format and the **_Long_** format, compare basic flattened index structures with multi-hierarchical index structures, and then create them ourselves using aggregation functions and pivot tables!
+In this lesson, we'll learn about the various ways we can index and structure our data sets to make it easier to process or understand.  We start by learning about the difference between the **_Wide_** format and the **_Long_** format, compare basic flattened index structures with multi-hierarchical index structures, and then create them ourselves using aggregation functions and pivot tables!
 
 ## Objectives
 
 You will be able to:
 
-* Understand and explain what a multi-level hierarchical index is
-* Understand, explain the difference and use df.pivot and pd.pivot_table
-* Switch between “long” and “wide” in a DataFrame using stack() and unstack()
-* Transform “wide” to “long” DataFrames using `melt`
+- Describe what is meant by long and wide format data 
+- Use multi-hierarchical indexing to access aggregated data 
+- Use pivot to create a more organized aggregated DataFrame 
+- Use stack and unstack to move between different level of multi-indexing 
+
 
 
 ## Long and Wide Formats
@@ -55,9 +56,9 @@ Let's take a look at one more example:
 In this DataFrame, the index has three hierarchical levels, with the outermost being "State" and the innermost being "Race".
 
 
-## `.groupby()` and Aggregation Functions
+## `.groupby()` and aggregation methods
 
-Pandas DataFrames provide an easy way to group data using the `.groupby()` function.  To use this function, we just specify our indices in order (the columns we want to group the data by) and the function will return a new DataFrame containing the data grouped as we asked. 
+Pandas DataFrames provide an easy way to group data using the `.groupby()` method.  To use this method, we just specify our indices in order (the columns we want to group the data by) and the method will return a new DataFrame containing the data grouped as we asked. 
 
 For instance, if we wanted to group the Titanic Dataset by the port of embarkation, we would type:
 
@@ -75,7 +76,7 @@ dataframe.groupby(['Embarked', 'Pclass'])
 
 This would return a DataFrame with a multi-hierarchical index, with `'Embarked'` being the outermost level.
 
-Groupby statements are most commonly used with aggregation functions, which allow us to quickly calculate summary statistics such as the mean, median, min, max, mode, count, etc.  
+Groupby statements are most commonly used with aggregation methods, which allow us to quickly calculate summary statistics such as the mean, median, min, max, mode, count, etc.  
 
 Building on our last example, if we wanted to see the mean values for every grouping of `Embarked` and `Pclass` across different variables,  we would type:
 
@@ -83,9 +84,9 @@ Building on our last example, if we wanted to see the mean values for every grou
 dataframe.groupby(['Embarked', 'Pclass']).mean()
 ```
 
-Notice that we can make use of method chaining to quickly and concisely call the aggregation function at the same time as the groupby function.  
+Notice that we can make use of method chaining to quickly and concisely call the aggregation function at the same time as the `.groupby()` method.  
 
-## Pivot Tables
+## Pivot tables
 
 Pivot tables are a common toolset that you might have used before in spreadsheet software such as Microsoft Excel or Google Sheets.  
 
@@ -110,7 +111,7 @@ would return this pivot table:
 Don't worry about the data this actually contains, as you don't yet have the context because you haven't been introduced to the dataset. Instead, just pay attention to the structure of the indexes.
 
 
-## Stacking and Unstacking Data
+## Stacking and unstacking data
 
 One of the quickest ways to manipulate the format of a dataset in python is to use the `.stack()` and `unstack()` methods built into pandas DataFrames.  
 
@@ -118,7 +119,7 @@ Take a look at the following diagram and see if you can figure out what the `uns
 
 <img src='images/Image_201_unstack.png'>
 
-By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column--`.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
+By telling the `.unstack()` call which index we want to unstack, we can move it from the index section over to the right as a variable column -- `.stack()` would do the exact opposite, moving data to the left and making it a level of the index.  
 
 ## Summary
 
