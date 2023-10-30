@@ -1,9 +1,8 @@
-
 # Pivot Tables With Pandas
 
 ## Introduction
 
-In this lesson, we'll learn about the various ways we can index and structure our data sets to make it easier to process or understand.  We start by learning about the difference between the **_Wide_** format and the **_Long_** format, compare basic flattened index structures with multi-hierarchical index structures, and then create them ourselves using aggregation functions and pivot tables!
+In this lesson, we'll learn about the various ways we can index and structure our data sets to make it easier to process or understand.  We start by learning about the difference between the **_Wide_** format and the **_Long_** format, compare basic flattened index structures with multi-hierarchical index structures, and then create them ourselves using aggregation functions and pivot tables.
 
 ## Objectives
 
@@ -40,7 +39,7 @@ Note that in this format, a given observation has values across multiple rows.  
 
 ## Multi-Hierarchical Indexing
 
-A common task when working with data is to create pivot tables, or group the data using aggregation functions.  In this respect, the Long format provides a very neat, organized way of structuring our data with multiple levels of indexes, allowing us to cleanly and easily represent different combinations of data.  Consider the following pivot table below (which you'll create yourself in the next lab):
+A common task when working with data is to create pivot tables, or group the data using aggregation functions.  In this respect, the Long format provides a very neat, organized way of structuring our data with multiple levels of indexes, allowing us to cleanly and easily represent different combinations of data.  Consider the following pivot table below:
 <br>
 <br>
 
@@ -98,7 +97,7 @@ Pivot tables allow us to quickly examine our data by "pivoting" on different var
 
 In order to create a pivot table, we need to just call the `dataframe.pivot()` method and specify the `index` column, the `columns` to put in our pivot table, and the `value` to put in each cell.  
 
-For example, let's look at a pivot table you'll create in the next lab:
+For example, let's look at a pivot table:
 
 ```python
 some_dataframe.pivot(index='State', columns='Gender', values='Deaths_mean')
@@ -123,4 +122,4 @@ By telling the `.unstack()` call which index we want to unstack, we can move it 
 
 ## Summary
 
-We spent some time in this lesson learning about approaches to indexing and structuring our data sets. In the next lesson, we'll get some hands-on practice!
+We spent some time in this lesson learning about approaches to indexing and structuring our data sets.
